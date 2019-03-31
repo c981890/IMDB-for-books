@@ -19,7 +19,7 @@ public class ImdbforbooksApplication {
 
 		SpringApplication.run(ImdbforbooksApplication.class, args);
 
-		// Initializing repositorys and importing data from CSV files
+		// Initializing repositories and importing data from CSV files
 		UserRepositoryImpl userRepositoryImlp = new UserRepositoryImpl();
 		readUsersFromCSV(userRepositoryImlp);
 
@@ -29,12 +29,13 @@ public class ImdbforbooksApplication {
 		BookRepositoryImpl bookRepositoryImpl = new BookRepositoryImpl();
 		readBooksFromCSV(bookRepositoryImpl);
 
-		// Search - fulltext and criteria
+		// Search - fulltext
 		List result = userRepositoryImlp.search("Denmark");
 		for (Object member : result) {
 			System.out.println(member);
 		}
 
+		// Search - criteria
 		List topResult = ratingRepositoryImpl.topItems(10);
 		for (Object member : topResult) {
 			System.out.println(member);
