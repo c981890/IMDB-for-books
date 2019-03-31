@@ -1,7 +1,7 @@
 # IMDB-for-books
 
 - Clone to computer
-- use your favourite IDE and import project from existing resources
+- use your favourite IDEA and import project from existing resources
 - run the ImdbforbooksApplication
 
 Program starts H2 database in mem mode and imports csv files.
