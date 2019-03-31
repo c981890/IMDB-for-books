@@ -14,6 +14,7 @@ TODO
     - ISBN
     - FROM ratings
     - GROUP BY ISBN
-    - ORDER BY 1 DESC;
+    - ORDER BY 1 DESC
+    - LIMIT 10;
 - @OneToMany relationships
 - log4j logging
