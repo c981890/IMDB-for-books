@@ -7,6 +7,7 @@ import org.hibernate.query.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -25,14 +26,19 @@ public class RatingRepositoryImpl implements RatingRepository {
     }
 
     public List topItems(int numberOfItems) {
+
+        // Define the CriteriaQuery
         CriteriaQuery<Rating> criteriaQuery =
                 this.em.getCriteriaBuilder().createQuery(Rating.class);
         Root<Rating> rating = criteriaQuery.from(Rating.class);
         criteriaQuery.select(rating);
+
+        // Execute query
         List limitedCriteriaQuery = this.em.createQuery(criteriaQuery)
                 .setMaxResults(numberOfItems)
                 .getResultList();
         return limitedCriteriaQuery;
+
 
     }
 

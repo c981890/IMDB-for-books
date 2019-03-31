@@ -36,7 +36,7 @@ public class Book {
     private String imageUrlM;
     private String imageUrlL;
 
-    public Book() {
+    protected Book() {
 
     }
 

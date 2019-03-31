@@ -21,7 +21,7 @@ public class User {
     @NumericField
     private Integer age;
 
-    public User() {
+    protected User() {
 
     }
 

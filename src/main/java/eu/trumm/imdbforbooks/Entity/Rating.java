@@ -27,7 +27,7 @@ public class Rating {
     @NumericField
     private int bookRating;
 
-    public Rating() {
+    protected Rating() {
 
     }
 
@@ -59,5 +59,14 @@ public class Rating {
 
     public void setBookRating(int bookRating) {
         this.bookRating = bookRating;
+    }
+
+    @Override
+    public String toString() {
+        return "Rating{" +
+                "userId=" + userId +
+                ", isbn='" + isbn + '\'' +
+                ", bookRating=" + bookRating +
+                '}';
     }
 }

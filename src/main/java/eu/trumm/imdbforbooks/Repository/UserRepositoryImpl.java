@@ -23,7 +23,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     public List<User> search(String keyword) {
-        // TODO your logic here with full-text entity manager ...
+        // Define the query
         QueryBuilder qb = this.ftem.getSearchFactory()
                 .buildQueryBuilder().forEntity(User.class).get();
         org.apache.lucene.search.Query query = qb
@@ -32,11 +32,11 @@ public class UserRepositoryImpl implements UserRepository {
                 .matching(keyword)
                 .createQuery();
 
-        // wrap Lucene query in a javax.persistence.Query
+        // Wrap Lucene query in a javax.persistence.Query
         javax.persistence.Query persistenceQuery =
                 this.ftem.createFullTextQuery(query, User.class);
 
-        // execute search
+        // Execute search
         List<User> result = persistenceQuery.getResultList();
         return result;
     }
