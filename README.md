@@ -5,7 +5,8 @@
 - run the ImdbforbooksApplication
 
 Program starts H2 database in mem mode and imports csv files.
-I have replaced full csv's with csv's containing 10 000 entries.
+I have replaced full csv's with csv's containing 10 000 entries. Despite this
+it would be OK to get a cup of coffee while waiting. 
 
 TODO
 - Criteria based queries
